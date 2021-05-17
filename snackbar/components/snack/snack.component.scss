@@ -1,0 +1,70 @@
+@import '~@spartacus/styles/scss/mixins';
+@import 'scss/utils/functions/rem';
+@import 'scss/utils/mixins/size';
+
+:host {
+  min-width: 260px;
+  max-width: 50vw;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .snack {
+    padding: 20px 40px 20px 20px;
+    border-radius: 4px;
+    background: var(--sd-color-gray-100);
+    color: var(--sd-color-gray-8);
+    margin-bottom: 8px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
+    position: relative;
+
+    p {
+      margin-bottom: 0;
+      font-size: rem(14px);
+      font-weight: 500;
+    }
+
+    h4 {
+      font-size: rem(18px);
+      margin-bottom: 8px;
+    }
+
+    &.light {
+      background: var(--cx-color-inverse);
+      color: var(--sd-color-gray-100);
+
+      .remove-icon {
+        color: var(--sd-color-gray-100);
+      }
+    }
+
+    &.yellow {
+      background: var(--cx-color-primary);
+      color: var(--sd-color-gray-100);
+
+      .remove-icon {
+        color: var(--sd-color-gray-100);
+      }
+    }
+
+    .remove {
+      &-btn {
+        width: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        outline: none !important;
+      }
+
+      &-icon {
+        color: var(--cx-color-inverse);
+
+        ::ng-deep svg {
+          @include size(15px);
+        }
+      }
+    }
+  }
+}

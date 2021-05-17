@@ -1,0 +1,17 @@
+<div class="snack" [ngClass]="{ light: snack.theme === 'light', yellow: snack.theme === 'yellow' }">
+  <sd-snackbar-templates
+    *ngIf="!!snack.template; else textTemplate"
+    [template]="snack.template"
+  ></sd-snackbar-templates>
+
+  <ng-template #textTemplate>
+    <h4 *ngIf="snack.title">{{ snack.title }}</h4>
+    <p>
+      {{ snack.text }}
+    </p>
+  </ng-template>
+
+  <button class="btn btn-link remove-btn" (click)="close()">
+    <cx-icon class="remove-icon" [type]="iconType.CLOSE"></cx-icon>
+  </button>
+</div>

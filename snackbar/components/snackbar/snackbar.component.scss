@@ -1,0 +1,25 @@
+@import 'scss/utils/functions/z-index';
+@import '~@spartacus/styles/scss/mixins';
+
+.snackbar {
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  padding: 5px;
+  z-index: zIndex(snackbar);
+  max-height: 100vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include media-breakpoint-down(md) {
+    width: calc(100% - 30px);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
